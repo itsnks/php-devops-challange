@@ -2,7 +2,9 @@ FROM php:7.4-apache
 LABEL Author="Nikesh"
 LABEL Project="intuji-devops-assignment"
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt install unzip -y
+RUN apt-get update && apt install unzip apache2 -y
+CMD [ "/usr/sbin/apache2ctl","-D","FOREGROUND" ]
+EXPOSE 80
 
 # Install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -11,13 +13,9 @@ RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN mv composer.phar /usr/local/bin/composer
 
-EXPOSE 80
 WORKDIR /var/www/html/
 COPY index.php /var/www/html/
 
 # Run composer commands
 RUN composer require silarhi/hello-world
 RUN composer update silarhi/hello-world
-
-# Run php file
-CMD ["php","./index.php"]

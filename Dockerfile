@@ -1,6 +1,6 @@
 FROM php:7.4-apache
 LABEL Author="Nikesh"
-LABEL Project="intuji-devops-assignment"
+LABEL Project="nikeshhh/php-app-intuji"
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt install unzip apache2 -y
 CMD [ "/usr/sbin/apache2ctl","-D","FOREGROUND" ]

@@ -1,7 +1,7 @@
 services:
   app:
+    image: nikeshhh/php-app-intuji
     container_name: php-app
-    build: .
     ports:
       - "8000:80"
     networks:

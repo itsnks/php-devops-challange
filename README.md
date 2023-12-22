@@ -17,6 +17,7 @@ to install docker run the following command:
 ```
 git clone https://github.com/silarhi/php-hello-world.git
 ```
+<img src="img/clone.png">
 
 - The `Dockerfile` uses `php:7.4-apache` as base image and runs based on instructions given in github repository above
 - The `index.php` file is deployed using `apache2` as the web server
@@ -24,7 +25,7 @@ git clone https://github.com/silarhi/php-hello-world.git
 ```
 docker build -t nikeshhh/phpapp-intuji .
 ```
-
+<img src="img/docker-build.png">
 ### 2.2. Pushing the image to Dockerhub
 
 - To connect with dockerhub user:
@@ -35,7 +36,7 @@ docker login
 ```
 docker push nikeshhh/phpapp-intuji
 ```
-
+<img src="img/docker-push.png">
 ## 3. Docker-compose file 
 
 - Docker compose uses the image built in the previous step either locally available or pulls from dockerhub
@@ -48,3 +49,11 @@ docker compose up
 ## 4. Jenkins
 
 - Jenkins can be installed using either the [Docker container installation](https://hub.docker.com/r/jenkins/jenkins) or [Direct installation](https://pkg.jenkins.io/debian-stable/)
+- Jenkins can be accessed in browser at 
+```localhost:8080```
+- After unlocking using initial password stored at `/var/lib/jenkins/secrets/initialAdminPassword` admin user is created
+<img src="img/jenkins-user.png">
+- On user creation, required extensions are installed
+<img src="img/jenkins-extension.png">
+- After the extensions have been installed you can head to jenkins home page
+<img src="img/jenkins-home.png">

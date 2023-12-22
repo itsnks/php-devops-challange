@@ -26,6 +26,7 @@ git clone https://github.com/silarhi/php-hello-world.git
 docker build -t nikeshhh/phpapp-intuji .
 ```
 <img src="img/docker-build.png">
+
 ### 2.2. Pushing the image to Dockerhub
 
 - To connect with dockerhub user:
@@ -74,7 +75,7 @@ docker push nikeshhh/phpapp-intuji
 <img src="img/jenkins-build-code.png">
 
 Note:
-When using directly on Debian host, thhe user `Jenkins` must be in the groups `docker` and `sudo`
+When using directly on Debian host, thhe user `Jenkins` must be in the groups `docker` and `sudo` and `docker login` must be used as jenkins user once
 
 - Create a 2nd freestyle job that uses the same github repository URL
 

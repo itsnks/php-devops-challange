@@ -1,6 +1,6 @@
 services:
   app:
-    image: nikeshhh/php-app-intuji
+    image: nikeshhh/phpapp-intuji
     container_name: php-app
     ports:
       - "8000:80"

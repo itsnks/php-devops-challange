@@ -57,3 +57,10 @@ docker compose up
 <img src="img/jenkins-extension.png">
 - After the extensions have been installed you can head to jenkins home page
 <img src="img/jenkins-home.png">
+- Create a freestyle job and add the github repository URL with `main` branch
+<img src="img/jenkins-git.png">
+- Create a 2nd freestyle job that uses the same github repository URL
+- This job uses the `compose.yaml` file to deploy the application
+- Back in the 1st job add post build actions select `Archive the artifacts`
+- Add another post build action select `Build other projects` and add the name of the 2nd job
+<img src="img/jenkins-postbuild.png">

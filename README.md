@@ -71,6 +71,8 @@ docker compose up
 docker build -t nikeshhh/phpapp-intuji .
 docker push nikeshhh/phpapp-intuji
 ```
+<img src="img/jenkins-build-code.png">
+
 Note:
 When using directly on Debian host, thhe user `Jenkins` must be in the groups `docker` and `sudo`
 
@@ -84,9 +86,12 @@ When using directly on Debian host, thhe user `Jenkins` must be in the groups `d
 docker compose up
 ```
 
+<img src="img/jenkins-deploy-code.png">
+
 - Back in the 1st job add post build actions select `Archive the artifacts`
 
 - Add another post build action select `Build other projects` and add the name of the 2nd job
+
 <img src="img/jenkins-postbuild.png">
 
 - Save the Project and select `Build Now`
@@ -94,3 +99,25 @@ docker compose up
 - It will build the first job and after the first job has been completed successfully it will archive the `Dockerfile` and execute the second job
 
 - After the 2nd job has been built the php website can be accessed at `0.0.0.0:8000` or `localhost:8000`
+
+<img src="img/final-output.png">
+
+- The running container can be viewed using
+
+```
+docker ps -a
+```
+
+<img src="img/final-output-docker.png">
+
+- Console output of 1st job
+
+<img src="img/jenkins-build-console.png">
+
+<img src="img/jenkins-build-op.png">
+
+- Console output of 2nd job
+
+<img src="img/jenkins-deploy-console.png">
+
+Note: The 2nd job will be in running state as long as the docker container is still running

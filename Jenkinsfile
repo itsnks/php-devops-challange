@@ -8,6 +8,12 @@ pipeline{
                 docker push nikeshhh/phpapp-intuji
                 '''
             }
+            post{
+                success{
+                    echo "Archiving the Dockerfile....."
+                    archiveArtifacts artifacts: 'Dockerfile'
+                }
+            }
         }
         stage('Deploy-image') {
             steps{

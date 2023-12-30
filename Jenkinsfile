@@ -9,5 +9,11 @@ pipeline{
                 '''
             }
         }
+        stage('Deploy-image') {
+            steps{
+                echo "Deploying image"
+                sh 'docker compose up'
+            }
+        }
     }
 }

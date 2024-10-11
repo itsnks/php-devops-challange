@@ -1,4 +1,4 @@
-# intuji-devops-internship-challenge
+# PHP-devops-challenge
 
 
 ## 1. Installing Docker
